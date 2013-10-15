@@ -1,7 +1,7 @@
-/* 
+/***************************************************************************** 
  * AP1 PUF Vietnam
  * Exemple de programme d'affichage dans le terminal 
- */
+ *****************************************************************************/
 #include <iostream>
 #include <math.h>
 #include <cstdlib> 
@@ -15,13 +15,18 @@ using namespace std;
 #define N 20
 #define NBRE_GOUTTE 2
 
+/*****************************************************************************/
+
 bool touche_appuyee();
 int code_touche();
 
-char screen[N][N];
+/*****************************************************************************/
 
+char screen[N][N];
 void paysage();
 void affiche_screen();
+
+/*****************************************************************************/
 
 typedef struct {
   double x;
@@ -32,6 +37,8 @@ typedef struct {
 
 void init_sprite(Sprite & s, double x, double y, double dx, double dy);
 void mise_a_jour_sprite(Sprite & s);
+
+/*****************************************************************************/
 
 int main () {
   Sprite goutte[NBRE_GOUTTE];
@@ -64,6 +71,7 @@ int main () {
   }
 }
 
+/*****************************************************************************/
 
 void init_sprite(Sprite & s,
                  double x, 
@@ -86,6 +94,8 @@ void mise_a_jour_sprite(Sprite & s) {
   if (s.y > N-1) s.y = 0;
 }
 
+/*****************************************************************************/
+
 void paysage() {
   for (int i=0; i<N; i++)
     for (int j=0; j<N; j++)
@@ -104,9 +114,10 @@ void affiche_screen() {
   }
 }
 
-
-/* ce qui suit concerne l'usage des touches du clavier 
- * connaitre ce mécanisme est optionnel. */
+/*****************************************************************************
+ * ce qui suit concerne l'usage des touches du clavier 
+ * connaitre ce mécanisme est optionnel.                        
+ *****************************************************************************/
 
 int code_touche() {
   int result = -1;
@@ -128,3 +139,6 @@ bool touche_appuyee()
   select(STDIN_FILENO+1, &fds, NULL, NULL, &tv);
   return (FD_ISSET(0, &fds));
 }
+
+/*****************************************************************************/
+/*****************************************************************************/
