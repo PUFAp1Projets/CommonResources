@@ -39,13 +39,29 @@ disparait et le l'utilisateur a perdu. La balle rebondit sur le gallet si ce der
 
 Méthode:
 
-1) Commencez par adapter le programme de la goutte d'eau pour n'avoir qu'une seule goutte, qui rebondit contre les murs. Pour le rebond, il faut changer la vitesse de la goutte ("dx" et/ou "dy") lorsque la goutte est en contact avec un mur. Il vous faudra donc à chaque tour:
+Question 1) Commencez par adapter le programme de la goutte d'eau pour n'avoir qu'une seule goutte, qui rebondit contre les murs. Pour le rebond, il faut changer la vitesse de la goutte ("dx" et/ou "dy") lorsque la goutte est en contact avec un mur. Il vous faudra donc à chaque tour:
 - détecter si la goutte est en contact avec un mur,
 - changer dx ou dy en conséquence.
 
-2) Affichez le gallet et déplacez-le avec les touches "f" et "g", en vous inspirant de la goutte. Vous pouvez utiliser une nouvelle structure (struc) pour le gallet, indiquant ses coordonnées et sa largeur. Ensuite, il vous faudra détecter si le gallet est en contact avec la goutte, et si oui, changer le "dx" ou le "dy" de la
+Question 2) Affichez le gallet et déplacez-le avec les touches "f" et "g", en vous inspirant de la goutte. Vous pouvez utiliser une nouvelle structure (struc) pour le gallet, indiquant ses coordonnées et sa largeur. Ensuite, il vous faudra détecter si le gallet est en contact avec la goutte, et si oui, changer le "dx" ou le "dy" de la
 goutte en conséquence.
 
-3) ajoutez un tableau de brique. Vous utiliserez une structure (struct) vue en cours pour chaque brique. Cette structure contiendra les coordonnées de la brique, et aussi un booléen indiquant si elle est présente ou détruite. Vous n'afficherez que les briques présentes. Enfin, il faudra faire une fonction pour savoir si la balle touche une brique ou pas. Et si elle touche une brique donnée, elle doit la faire disparaitre et rebondir. 
+Question 3) ajoutez un tableau de brique. Vous utiliserez une structure (struct) vue en cours pour chaque brique. Cette structure contiendra les coordonnées de la brique, et aussi un booléen indiquant si elle est présente ou détruite. Vous n'afficherez que les briques présentes. Enfin, il faudra faire une fonction pour savoir si la balle touche une brique ou pas. Et si elle touche une brique donnée, elle doit la faire disparaitre et rebondir. 
+
+Vous travaillerez en groupe de projet.
+
+Planning:
+
+- demain soir le 16/10 à minuit au plus tard: 
+  déposer le résultat de la question 1) sur github dans votre projet, 
+  dans un répertoire special CasseBrique/
+
+- jeudi soir le 17/10 à minuit au plus tard:
+  déposer le résultat de la question 2)
+
+- dimanche soir le 20/10 à minuit au plus tard:
+  déposer l'ensemble du programme.
+
+Vous pouvez m'envoyer vos questions à ly@labri.fr sujet [AP1 PUF]
 
 Bon courage !
