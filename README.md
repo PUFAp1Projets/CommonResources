@@ -1,8 +1,6 @@
 CommonResources
 ===============
 
-Ressources communes pour le dÃ©veloppement du projet (images, extrait de code, etc.)
+Ressources communes pour le développement du projet 
+(images, extrait de code, etc.)
 
--- Essai 1 de modification --
-
--- Essai 2 de modification --

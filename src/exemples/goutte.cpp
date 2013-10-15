@@ -1,3 +1,7 @@
+/* 
+ * AP1 PUF Vietnam
+ * Exemple de programme d'affichage dans le terminal 
+ */
 #include <iostream>
 #include <math.h>
 #include <cstdlib> 
