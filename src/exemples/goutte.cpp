@@ -16,6 +16,7 @@ using namespace std;
 #define NBRE_GOUTTE 2
 
 bool touche_appuyee();
+int code_touche();
 
 char screen[N][N];
 
@@ -37,33 +38,29 @@ int main () {
   init_sprite(goutte[0], 4, 5, 0.0, 0.3);
   init_sprite(goutte[1], 6, 8, 0, 0);
 
-  for (int t=0; t<1000; t++) 
+  while(1)
   {
-    system ("stty raw");
-    usleep(40 * 1000);
-    if (touche_appuyee()) {
-      char c = getchar();
-      system ("stty cooked");
-      switch (c) {
-      case 'a':
-        goutte[0].dx = 0.3;
-        break;
-      case 'b':
-        goutte[0].dx = -0.3;
-        break;
-      case 13:
-        system ("stty cooked");
-        exit(0);
-      }
+    int c = code_touche();
+    switch (c) {
+    case 'a':
+      goutte[0].dx = 0.3;
+      break;
+    case 'b':
+      goutte[0].dx = -0.3;
+      break;
+    case 'q':
+    case 'Q':
+      exit(0);
     }
-    system ("stty cooked");
 
     paysage();
     for (int g=0; g<NBRE_GOUTTE; g++)
       screen[(int) goutte[g].x][(int) goutte[g].y] = 'O';
-    affiche_screen();
     for (int g=0; g<NBRE_GOUTTE; g++)
       mise_a_jour_sprite(goutte[g]);
+
+    usleep(40 * 1000);
+    affiche_screen();
   }
 }
 
@@ -105,6 +102,19 @@ void affiche_screen() {
       cout << screen[i][j];
     cout << endl;
   }
+}
+
+
+/* ce qui suit concerne l'usage des touches du clavier 
+ * connaitre ce mécanisme est optionnel. */
+
+int code_touche() {
+  int result = -1;
+  system ("stty raw");
+  if (touche_appuyee())
+    result = (int) getchar();
+  system ("stty cooked");
+  return result;
 }
 
 bool touche_appuyee()  
